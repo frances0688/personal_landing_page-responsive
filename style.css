@@ -132,6 +132,10 @@ form div{
     flex-direction: column;
 }
 
+form input:focus {
+    border-color: var(--blue);
+}
+
 footer {
     display: flex;
     margin-top: auto;
@@ -286,6 +290,22 @@ footer a {
     border-radius: 0;
     margin: 0 0 0 1vw;
     width: 25vw;
+}
+
+#portfolioPage-main img:hover {
+    box-shadow: -8px 8px 8px rgba(0, 0, 0, 0.2);
+}
+
+
+/* tablet breakpoint */
+@media screen and (min-width: 641px) and (max-width: 1023px)  {
+    body {
+        font-size: 14px;
+    }
+
+    main {
+        min-height: 75vh;
+    }
 }
 
 
