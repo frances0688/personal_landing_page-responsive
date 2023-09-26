@@ -266,6 +266,27 @@ footer a {
     align-items: center;
 }
 
+#portfolioPage-div {
+    padding-right: 3vw;
+}
+
+#portfolioPage-main .stylizedSec h2 {
+    border-left: .25em solid var(--blue);
+    border-bottom: .125em solid var(--blue);
+    padding-left: .25em;
+}
+
+#portfolioPage-main section {
+    flex-direction: row;
+    margin-bottom: 2vh;
+    padding-right: 0;
+}
+
+#portfolioPage-main img {
+    border-radius: 0;
+    margin: 0 0 0 1vw;
+    width: 25vw;
+}
 
 
 /* mobile breakpoint */
@@ -377,16 +398,33 @@ footer a {
         width: 80vw;
 	}
 
-    #form-name {
-        flex-direction: column;
-    }
-
     #form-name div {
         width: 100%;
     }
-
-    #bioPage-main {
+    
+    #form-name,
+    #bioPage-main,
+    #portfolioPage-main section {
         flex-direction: column;
+    }
+
+    #portfolioPage-div {
+        text-align: center;
+    }
+
+    #portfolioPage-div p {
+        font-size: 1.5em;
+        margin: 1vh 1vw 2.5vh;
+    }
+
+    #portfolioPage-main section {
+        padding: 2vh;
+        margin-bottom: 2vh;
+    }
+    
+    #portfolioPage-main img {
+        width: 100%;
+        margin: 0;
     }
 
 }
