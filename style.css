@@ -11,14 +11,14 @@
 body {
 	margin: 0;
 	padding: 0;
-    height: 100%;
+    min-height: 100vh;
 	font-family: "Abel", sans-serif;
 	background: linear-gradient(
 		to right,
 		var(--darkBeige) 40%,
 		var(--primaryBackground) 40%
 	);
-	font-size: 12px;
+	font-size: 20px;
 }
 
 header {
@@ -26,7 +26,7 @@ header {
 	flex-direction: row;
 	background-color: var(--primaryBackground);
 	width: 100%;
-	position: sticky;
+	position: static;
 	justify-content: space-between;
 }
 
@@ -57,21 +57,26 @@ nav ul {
 
 nav ul a {
     width: 12vw;
+}
+
+a {
 	color: black;
 	text-align: center;
 	text-decoration: none;
 	flex-direction: row;
 }
 
-nav ul a:hover {
+a:hover {
     color: var(--blue);
 }
 
 main {
     display: flex;
 	padding-top: 2vh;
-	margin: 10vh 4vw;
+	margin: 5% 3%;
 	justify-content: center;
+    align-items: center;
+    min-height: 55vh;
 }
 
 section {
@@ -79,6 +84,13 @@ section {
 	flex-direction: column;
 	align-content: center;
 	background-color: var(--primaryBackground);
+}
+
+img {
+    height: 15em;
+    width: 15em;
+    border-radius: 50%;
+    margin: 3vh;
 }
 
 button {
@@ -121,31 +133,68 @@ form div{
 }
 
 footer {
+    display: flex;
     margin-top: auto;
+    text-align: center;
+    align-items: center;
+    justify-content: space-around;
     background-color: var(--primaryBackground);
-    height: fit-content;
+    height: auto;
+    width: 100%;
+    padding-bottom: .5em;
+    bottom: 0;
 }
 
-.fa-square-full {
+footer section{
+    flex-direction: row;
+    justify-content: space-between;
+    width: 50vw;
+}
+
+footer div {
+    flex-direction: column;
+}
+
+footer h4 {
+    margin-bottom: .5em;
+}
+
+footer div p {
+    margin-top: 0;
+}
+
+footer a {
+    padding: 0 .25em;
+}
+
+
+/* Class styles */
+
+.fa-solid {
     color: var(--blue);
-    font-size: small;
-    padding-right: 1vw;
+    font-size:medium;
+    padding: .5vw;
+}
+
+.fa-bars{
+    color: black;
 }
 
 .menu-icon {
     display: none;
 }
 
-.project {
-    margin-top: 3vh;
-	display: flex;
-	align-items: center;
+.stylizedSec {
+    width: 50vw;
+    margin: auto;
+    padding: 3vh 3vw 0;
+    background-color: var(--primaryBackground);
+    box-shadow: -8px 8px 8px rgba(0, 0, 0, 0.2);
 }
 
-.project img {
-    max-width: 100%;
-	margin-right: 2.5vw;
-}
+
+
+/* Id styles */
 
 #form-name {
     flex-direction: row;
@@ -170,12 +219,6 @@ footer {
 	padding-top: 3vh;
 }
 
-#contact-card img {
-	height: 8rem;
-	width: 8rem;
-	border-radius: 50%;
-}
-
 #contact-icons {
 	display: flex;
 	flex-direction: row;
@@ -198,14 +241,14 @@ footer {
     padding: 3vh 5vw;
 }
 
+
 #intro h1 {
-	font-size: 4rem;
+	font-size: 6em;
 	font-weight: bolder;
 	margin: 0;
 }
 
 #intro h2 {
-	font-weight: bolder;
 	margin: 0 0 2vh;
 }
 
@@ -213,35 +256,27 @@ footer {
 	flex-direction: row;
 }
 
-#contactPage-main {
+#bioPage-main h1{
+    margin: 0;
+    font-size: 2em;
+}
+
+#bioPage-section {
+    background-color:transparent;
     align-items: center;
 }
 
-#contactPage-main section,
-#portfolioPage-main section {
-    width: 50vw;
-    margin: auto;
-    padding: 3vh 3vw 0;
-    background-color: var(--primaryBackground);
-	box-shadow: -8px 8px 8px rgba(0, 0, 0, 0.2);
-}
 
-
-
-
-/* medium breakpoint */
-/* @media screen and (max-width: 1007px){
-
-} */
 
 /* mobile breakpoint */
 @media screen and (max-width: 640px) {
 	body {
 		background: linear-gradient(
 			to bottom,
-			var(--darkBeige) 40%,
-			var(--primaryBackground) 40%
+			var(--darkBeige) 30%,
+			var(--primaryBackground) 30%
 		);
+        font-size: 14px;
 	}
 
     header {
@@ -291,13 +326,25 @@ footer {
 	}
 
 	section p {
-		font-size: 1em;
+		font-size: 1.5em;
 	}
 
     input[type="text"],
     input[type="email"],
     textarea {
         width: 90%;
+    }
+
+    footer {
+        flex-direction: column-reverse;
+    }
+
+    footer section {
+        width: 85%;
+    }
+
+    footer p { 
+        font-size: 1em;
     }
 
 	.menu-icon {
@@ -309,12 +356,16 @@ footer {
 	}
 
 	.menu-icon span {
-		font-size: 2.5em;
+        font-size: 2.5em;
 		line-height: 0;
 	}
 
+    .stylizedSec {
+        width: 80vw;
+    }
+
 	#menuToggle:checked ~ ul {
-		max-height: 14vh;
+		max-height: 20vh;
 	}
 
 	#contact-card {
@@ -323,6 +374,7 @@ footer {
 
 	#intro {
 		margin-top: 3vh;
+        width: 80vw;
 	}
 
     #form-name {
@@ -333,8 +385,9 @@ footer {
         width: 100%;
     }
 
-    #contactPage-main section {
-        width: 80vw;
+    #bioPage-main {
+        flex-direction: column;
     }
+
 }
 
