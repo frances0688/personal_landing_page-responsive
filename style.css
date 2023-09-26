@@ -1,0 +1,267 @@
+:root {
+	--primaryBackground: #fefefe;
+	--blue: #316bf8;
+	--darkBeige: #e6d9ce;
+	--lightBeige: #f4ece6;
+	--silver: #a5a4a4;
+	--lightGray: #eaecee;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+    height: 100%;
+	font-family: "Abel", sans-serif;
+	background: linear-gradient(
+		to right,
+		var(--darkBeige) 40%,
+		var(--primaryBackground) 40%
+	);
+	font-size: 12px;
+}
+
+header {
+	display: flex;
+	flex-direction: row;
+	background-color: var(--primaryBackground);
+	width: 100%;
+	position: sticky;
+	justify-content: space-between;
+}
+
+header h4 {
+    padding-left: 1em;
+}
+
+header div {
+    display: flex;
+	flex-direction: row;
+	align-items: center;
+    padding: 1.5vh 3vw;
+}
+
+nav {
+    display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+
+nav ul {
+    margin: 0;
+	padding: 0;
+	list-style: none;
+	display: flex;
+	align-items: center;
+}
+
+nav ul a {
+    width: 12vw;
+	color: black;
+	text-align: center;
+	text-decoration: none;
+	flex-direction: row;
+}
+
+nav ul a:hover {
+    color: var(--blue);
+}
+
+main {
+    display: flex;
+	padding-top: 2vh;
+	margin: 10vh 4vw;
+	flex-direction: row;
+	justify-content: center;
+}
+
+section {
+    display: flex;
+	flex-direction: column;
+	align-content: center;
+	background-color: var(--primaryBackground);
+}
+
+hr {
+    border: 1.5px solid var(--blue);
+	width: 30%;
+}
+
+.fa-square-full {
+    color: var(--blue);
+    padding-right: 1vw;
+}
+
+.menu-icon {
+    display: none;
+}
+
+.project {
+    margin-top: 3vh;
+	display: flex;
+	align-items: center;
+}
+
+.project img {
+	max-width: 100%;
+	margin-right: 2.5vw;
+}
+
+#menuToggle {
+	display: none;
+}
+
+#contact-card {
+	background-color: var(--lightBeige);
+	text-align: center;
+	justify-content: center;
+	align-items: center;
+	box-shadow: -8px 8px 8px rgba(0, 0, 0, 0.2);
+	width: 40vw;
+	padding-top: 3vh;
+}
+
+#contact-card img {
+	height: 8rem;
+	width: 8rem;
+	border-radius: 50%;
+}
+
+#contact-icons {
+	display: flex;
+	flex-direction: row;
+	align-items: end;
+	justify-content: center;
+	width: 100%;
+	height: 2em;
+	background-color: var(--primaryBackground);
+	padding: 0.75vh 0;
+}
+
+#contact-icons span {
+	font-size: 1.5em;
+	padding: 0 0.5em;
+}
+
+#intro {
+	flex-direction: column;
+    width: 40vw;
+    padding: 3vh 5vw;
+}
+
+#intro h1 {
+	font-size: 4rem;
+	font-weight: bolder;
+	margin: 0;
+}
+
+#intro h2 {
+	font-weight: bolder;
+	margin: 0 0 2vh;
+}
+
+#intro div {
+	flex-direction: row;
+}
+
+#intro div button {
+	border: 1px solid black;
+	border-radius: 16px;
+	padding: 0.5em 1.5em;
+	margin: 0 2vw 1vh 0;
+	font-size: 1em;
+	color: black;
+	text-decoration: none;
+}
+
+#intro div button:hover {
+	background-color: var(--blue);
+	color: var(--primaryBackground);
+}
+
+
+
+
+@media screen and (max-width: 768px) {
+	body {
+		background: linear-gradient(
+			to bottom,
+			var(--darkBeige) 40%,
+			var(--primaryBackground) 40%
+		);
+	}
+
+    header {
+        flex-direction: column;
+    }
+
+	header h1 {
+		font-size: 1.5em;
+	}
+
+	nav {
+        align-items: center;
+	}
+
+	nav ul {
+		display: flex;
+		flex-direction: column;
+		max-height: 0;
+		overflow: hidden;
+		transition: max-height 0.3s;
+	}
+
+	nav ul a {
+		text-align: left;
+		background-color: var(--primaryBackground);
+		width: 100%;
+		height: 3em;
+		padding: 0.625vh 0 0.625vh 2.5vw;
+	}
+
+	main {
+		flex-direction: column;
+		align-items: center;
+		margin-top: inherit;
+	}
+
+	section {
+		width: 75vw;
+	}
+
+	section h1 {
+		font-size: 2.5em;
+	}
+
+	section h2 {
+		font-size: 2em;
+	}
+
+	section p {
+		font-size: 1em;
+	}
+
+	.menu-icon {
+		width: 10vw;
+		display: block;
+		position: absolute;
+		top: 3em;
+		right: 0;
+	}
+
+	.menu-icon span {
+		font-size: 2.5em;
+		line-height: 0;
+	}
+
+	#menuToggle:checked ~ ul {
+		max-height: 14vh;
+	}
+
+	#contact-card {
+		width: 70vw;
+	}
+
+	#intro {
+		margin-top: 3vh;
+	}
+}
